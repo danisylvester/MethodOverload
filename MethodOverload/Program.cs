@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace MethodOverload
 {
@@ -6,8 +7,7 @@ namespace MethodOverload
     {
         static void Main(string[] args)
         {
-            var answer = Add(5, 5, true);
-            Console.WriteLine(answer);
+           Console.WriteLine(Add(1,1,1,1,1));
         }
         public static int Add(int num1, int num2)
         {
@@ -34,6 +34,12 @@ namespace MethodOverload
                 return "Your bool is false!";
             }
 
+        }
+
+        // This method will allow you to input as many arguments as you want. It stores these args in an array.
+        public static int Add(params int[] array)
+        {
+            return array.Sum();
         }
 
     }
